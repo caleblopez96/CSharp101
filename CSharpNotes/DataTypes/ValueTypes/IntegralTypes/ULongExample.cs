@@ -12,7 +12,7 @@
 
 // USES:
 // big numeric values like file sies, timestamps, population counts
-namespace CSharpNotes.DataTypes.Primitives
+namespace CSharpNotes.DataTypes.ValueTypes.IntegralTypes
 {
     internal class ULongExample
     {

@@ -13,7 +13,7 @@
 // USES:
 // Med-sized positive numbers, like object IDs or pixel counts
 
-namespace CSharpNotes.DataTypes.Primitives
+namespace CSharpNotes.DataTypes.ValueTypes.IntegralTypes
 {
     internal class UShortExample
     {

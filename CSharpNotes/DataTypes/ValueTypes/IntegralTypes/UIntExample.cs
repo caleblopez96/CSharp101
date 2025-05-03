@@ -16,7 +16,7 @@
 // USES:
 // large positive-only numbers like indexes or counters
 
-namespace CSharpNotes.DataTypes.Primitives
+namespace CSharpNotes.DataTypes.ValueTypes.IntegralTypes
 {
     public class UIntExample
     {

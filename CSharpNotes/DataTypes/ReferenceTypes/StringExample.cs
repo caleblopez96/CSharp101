@@ -13,7 +13,7 @@
 // USES:
 // text data, messages, identifiers
 
-namespace CSharpNotes.DataTypes.Primitives
+namespace CSharpNotes.DataTypes.ReferenceTypes
 {
     internal class StringExample
     {

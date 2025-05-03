@@ -14,7 +14,7 @@
 // USES:
 // storing small numbers like pixel values (0-255), flags, or raw binary data
 
-namespace CSharpNotes.DataTypes.Primitives
+namespace CSharpNotes.DataTypes.ValueTypes.IntegralTypes
 {
     internal class ByteExample
     {

@@ -1,5 +1,5 @@
-﻿using CSharpNotes.DataTypes.Non_Primitives;
-using CSharpNotes.DataTypes.Primitives;
+﻿using CSharpNotes.DataTypes.ReferenceTypes;
+using CSharpNotes.DataTypes.ValueTypes.IntegralTypes;
 class Program
 {
     public static void Main()
@@ -14,6 +14,7 @@ class Program
         LongExample.Run();
         ULongExample.Run();
         ArrayExample.Run();
+        CharExample.Run();
         Console.Read();
     }
 }

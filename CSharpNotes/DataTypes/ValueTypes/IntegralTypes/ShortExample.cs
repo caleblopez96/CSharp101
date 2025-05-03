@@ -12,7 +12,7 @@
 
 // USES: efficient storage of medium-sized signed numbers, like player health or scores
 
-namespace CSharpNotes.DataTypes.Primitives
+namespace CSharpNotes.DataTypes.ValueTypes.IntegralTypes
 {
     internal class ShortExample
     {

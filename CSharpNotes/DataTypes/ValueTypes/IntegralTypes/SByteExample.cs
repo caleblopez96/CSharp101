@@ -13,7 +13,7 @@
 // USES:
 // use when small signed values are needed, like temperature or deltas
 
-namespace CSharpNotes.DataTypes.Primitives
+namespace CSharpNotes.DataTypes.ValueTypes.IntegralTypes
 {
     internal class SByteExample
     {

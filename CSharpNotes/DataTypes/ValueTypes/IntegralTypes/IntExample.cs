@@ -13,7 +13,7 @@
 // USES:
 // default numeric type for whole numbers in most apps
 
-namespace CSharpNotes.DataTypes.Primitives
+namespace CSharpNotes.DataTypes.ValueTypes.IntegralTypes
 {
     internal class IntExample
     {

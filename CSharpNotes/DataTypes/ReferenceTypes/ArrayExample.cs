@@ -13,7 +13,7 @@
 // USES:
 // storing multiple values in a single collection, grouping related data
 
-namespace CSharpNotes.DataTypes.Non_Primitives
+namespace CSharpNotes.DataTypes.ReferenceTypes
 {
     internal class ArrayExample
     {
