@@ -1,4 +1,4 @@
-﻿using CSharpNotes.DataTypes;
+﻿using CSharpNotes.DataTypes.Primitives;
 class Program
 {
     public static void Main()
