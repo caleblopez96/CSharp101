@@ -10,6 +10,7 @@ class Program
         ShortExample.Run();
         UIntExample.Run();
         UShortExample.Run();
+        LongExample.Run();
         Console.Read();
     }
 }

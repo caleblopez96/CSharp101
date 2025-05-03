@@ -8,7 +8,7 @@
 // a uint value
 
 // USES: large positive-only numbers like indexes or counters
-namespace CSharp101.DataTypes
+namespace CSharpNotes.DataTypes
 {
     public class UIntExample
     {

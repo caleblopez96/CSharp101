@@ -8,7 +8,7 @@
 // a string with the value passed
 
 // USES: text data, messages, identifiers
-namespace CSharp101.DataTypes
+namespace CSharpNotes.DataTypes
 {
     internal class StringExample
     {
