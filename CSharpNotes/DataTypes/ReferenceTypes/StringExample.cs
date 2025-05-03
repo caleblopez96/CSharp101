@@ -1,4 +1,4 @@
-﻿// strings:
+﻿// string:
 // use the string keyword to declare a string
 
 // TYPE:
