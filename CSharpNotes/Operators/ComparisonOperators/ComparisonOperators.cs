@@ -29,12 +29,26 @@ namespace CSharpNotes.Operators.ComparisonOperators
         public static void Run()
         {
             Console.WriteLine("This is the comparison operator example");
+
+            // equality 
             Console.WriteLine($"Equals: 5 == 5 = {5 == 5}"); // true
+
+            // non equality
             Console.WriteLine($"Not Equal: 10 != 5 = {10 != 5}"); // true
+
+            // greater than
             Console.WriteLine($"Is Greater: 5 > 10 = {5 > 10}"); // false
+
+            // less than
             Console.WriteLine($"Is Less: 5 < 10 = {5 < 10}"); // true 
+
+            // greater than or equal to
             Console.WriteLine($"Greater or Equal to: 5 >= 10 = {5 >= 10}"); // false
+
+            // less than or equal to
             Console.WriteLine($"Less or Equal to: 10 <= 5 = {10 <= 5}"); // false
+
+            Console.WriteLine();
         }
     }
 }

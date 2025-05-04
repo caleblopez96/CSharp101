@@ -33,20 +33,27 @@ namespace CSharpNotes.Operators.AssignmentOperators
             int value = 10;
             Console.WriteLine($"Intital value: {value}");
 
+            // addition assignment
             value += 5;
             Console.WriteLine($"Value after += 5: {value}"); // 15
 
+            // subtraction assignment
             value -= 2;
             Console.WriteLine($"Value after -= 2: {value}"); // 13
 
+            // multiplication assignment
             value *= 2;
             Console.WriteLine($"Value after *= 2: {value}"); // 26
 
+            // divison assignment
             value /= 2;
             Console.WriteLine($"Value after /= 2: {value}"); // 13
 
+            // modulo assignment
             value %= 2;
             Console.WriteLine($"Value after %= 2: {value}"); // 1
+
+            Console.WriteLine();
         }
     }
 }

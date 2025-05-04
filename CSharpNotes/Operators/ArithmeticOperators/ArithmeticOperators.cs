@@ -38,11 +38,22 @@ namespace CSharpNotes.Operators.ArithmeticOperators
             double quotient = (double) a / b; // 0.5
             int remainder = a % b; // 10
 
+            // addition
             Console.WriteLine($"Addition: { a } + { b } = { sum }");
+
+            // subtraction
             Console.WriteLine($"Subtraction: { a } - { b } = { difference }");
+
+            // multiplication
             Console.WriteLine($"Product: { a } * { b } = { product }");
+
+            // division
             Console.WriteLine($"Quotient: { a } / { b } = { quotient }");
-            Console.WriteLine($"Remainder: { a } % { b } = {remainder}");  
+
+            // modulo
+            Console.WriteLine($"Remainder: { a } % { b } = {remainder}");
+            
+            Console.WriteLine();
         }
     }
 }
