@@ -20,10 +20,7 @@ namespace CSharpNotes.DataTypes.ReferenceTypes.DelegateTypes
     internal class FuncExample
     {
         // Method to point to
-        public static int AddNumbers(int a, int b)
-        {
-            return a + b;
-        }
+        public static int AddNumbers(int a, int b) => a + b;
         public static void Run()
         {
             Console.WriteLine("This is the Func delegate example");
