@@ -2,7 +2,7 @@
 // use the string keyword to declare a string
 
 // TYPE:
-// built-in type (primitive)
+// built-in type (reference)
 
 // SYNTAX:
 // string stringName = "value";
@@ -11,9 +11,9 @@
 // a string with the value passed
 
 // USES:
-// text data, messages, identifiers
+// storing and manipulating text data
 
-namespace CSharpNotes.DataTypes.ReferenceTypes
+namespace CSharpNotes.DataTypes.ReferenceTypes.ClassTypes
 {
     internal class StringExample
     {

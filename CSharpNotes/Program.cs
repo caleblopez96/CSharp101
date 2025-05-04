@@ -1,4 +1,6 @@
 ﻿using CSharpNotes.DataTypes.ReferenceTypes;
+using CSharpNotes.DataTypes.ReferenceTypes.ArrayTypes;
+using CSharpNotes.DataTypes.ReferenceTypes.ClassTypes;
 using CSharpNotes.DataTypes.ValueTypes.FloatingPointTypes;
 using CSharpNotes.DataTypes.ValueTypes.IntegralTypes;
 using CSharpNotes.DataTypes.ValueTypes.Other;
@@ -7,6 +9,7 @@ class Program
     public static void Main()
     {
         Console.WriteLine("==========================");
+        Console.WriteLine();
         Console.WriteLine("Value Types: ");
         ByteExample.Run();
         CharExample.Run();
@@ -24,9 +27,17 @@ class Program
         EnumExample.Run();
         StructExample.Run();
         Console.WriteLine("==========================");
+        Console.WriteLine();
+        Console.WriteLine("Reference Types: ");
         StringExample.Run();
-
+        ObjectExample.Run();
         ArrayExample.Run();
+        DynamicExample.Run();
+        ClassExample.Run();
+        IntArrayExample.Run();
+        StringArrayExample.Run();
+        ClassArrayExample.Run();
+        Console.WriteLine("==========================");
         Console.Read();
     }
 }

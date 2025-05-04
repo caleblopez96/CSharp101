@@ -31,7 +31,7 @@ namespace CSharpNotes.DataTypes.ValueTypes.Other
 
             Console.WriteLine($"This is the stuct data type example: ");
             Console.WriteLine("struct Point { public int x; public int y; }");
-            Console.WriteLine($"Point p = (X: {p.x}, Y: { p.y})");
+            Console.WriteLine($"Point p = (X: { p.x }, Y: { p.y })");
             Console.WriteLine();
         }
     }
