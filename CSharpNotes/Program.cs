@@ -2,6 +2,7 @@
 using CSharpNotes.DataTypes.ReferenceTypes.ArrayTypes;
 using CSharpNotes.DataTypes.ReferenceTypes.ClassTypes;
 using CSharpNotes.DataTypes.ReferenceTypes.DelegateTypes;
+using CSharpNotes.DataTypes.ReferenceTypes.InterfaceTypes;
 using CSharpNotes.DataTypes.ValueTypes.FloatingPointTypes;
 using CSharpNotes.DataTypes.ValueTypes.IntegralTypes;
 using CSharpNotes.DataTypes.ValueTypes.Other;
@@ -40,6 +41,10 @@ class Program
         ClassArrayExample.Run();
         ActionExample.Run();
         FuncExample.Run();
+        CustomDelegateExample.Run();
+        IEnumerableExample.Run();
+        IDisposableExample.Run();
+        CustomInterfaceExample.Run();
         Console.WriteLine("==========================");
         Console.Read();
     }
