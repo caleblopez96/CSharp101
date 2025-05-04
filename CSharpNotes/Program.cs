@@ -1,12 +1,4 @@
-﻿using CSharpNotes.DataTypes.ReferenceTypes;
-using CSharpNotes.DataTypes.ReferenceTypes.ArrayTypes;
-using CSharpNotes.DataTypes.ReferenceTypes.ClassTypes;
-using CSharpNotes.DataTypes.ReferenceTypes.DelegateTypes;
-using CSharpNotes.DataTypes.ReferenceTypes.InterfaceTypes;
-using CSharpNotes.DataTypes.ValueTypes.FloatingPointTypes;
-using CSharpNotes.DataTypes.ValueTypes.IntegralTypes;
-using CSharpNotes.DataTypes.ValueTypes.Other;
-using CSharpNotes.Operators.ArithmeticOperators;
+﻿using CSharpNotes.Operators.ArithmeticOperators;
 using CSharpNotes.Operators.AssignmentOperators;
 using CSharpNotes.Operators.ComparisonOperators;
 class Program
