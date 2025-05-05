@@ -15,8 +15,6 @@
 // USES:
 // storing multiple objects with shared structure and behavior
 
-using System.Xml.Serialization;
-
 namespace CSharpNotes.DataTypes.ReferenceTypes.ArrayTypes
 {
     internal class ClassArrayExample
