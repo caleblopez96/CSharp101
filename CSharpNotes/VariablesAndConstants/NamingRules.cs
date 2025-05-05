@@ -35,7 +35,7 @@ namespace CSharpNotes.VariablesAndConstants
 
         // _camelCase for private fields
         private int _internalCounter = 0;
-
+        
         // Constant in PascalCase (modern C#)
         public const double TaxRate = 0.0825;
 
