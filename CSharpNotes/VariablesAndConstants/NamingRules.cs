@@ -34,7 +34,7 @@ namespace CSharpNotes.VariablesAndConstants
         public string ProductName { get; set; } = string.Empty;
 
         // _camelCase for private fields
-        private int _internalCounter = 0;
+        // private int _internalCounter = 0;
         
         // Constant in PascalCase (modern C#)
         public const double TaxRate = 0.0825;

@@ -24,7 +24,7 @@ namespace CSharpNotes.VariablesAndConstants
     internal class VariableScope
     {
         // class/instance scope
-        private string classLevelMessage = "I am a class-level variable.";
+        // private string classLevelMessage = "I am a class-level variable.";
 
         // static (global) scope
         public static int globalCount = 0;
