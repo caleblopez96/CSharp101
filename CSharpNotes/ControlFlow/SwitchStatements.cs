@@ -8,18 +8,22 @@
 // - break statements are used to exit each case
 
 // SYNTAX EXAMPLES:
-// switch (variable)
-// {
-//     case value1:
-//         code if variable == value1
-//         break;
-//     case value2:
-//         code if variable == value2
-//         break;
-//     default:
-//         code if no case matches
-//         break;
-// }
+/* 
+
+switch (variable)
+{
+    case value1:
+        code if variable == value1
+        break;
+    case value2:
+        code if variable == value2
+        break;
+    default:
+        code if no case matches
+        break;
+}
+
+*/
 
 // USE CASES:
 // - simplifying multiple value checks
@@ -33,7 +37,7 @@
 
 namespace CSharpNotes.ControlFlow
 {
-  internal class SwitchExample
+  internal class SwitchStatements
   {
     public static void Run()
     {

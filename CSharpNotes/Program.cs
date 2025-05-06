@@ -7,7 +7,7 @@ class Program
     Console.WriteLine("==========================");
     Console.WriteLine("You can use any object and run Object.Run() to get the confirmation to show");
     Console.WriteLine("Example: ArithmeticOperators.Run()");
-    IfElseExample.Run();
+    ForEachExample.Run();
     Console.WriteLine();
     Console.Read();
   }
