@@ -1,4 +1,4 @@
-# 📚 Dapper Cheat Sheet
+# Dapper Cheat Sheet
 
 Dapper is a lightweight ORM for .NET that maps SQL query results directly to C# objects.
 
@@ -85,5 +85,3 @@ var rowsAffected = connection.Execute(sql, new { OrderId = 1 });
 - Leverage multi-line `@""` strings for complex queries
 
 ---
-
-Happy querying! 🚀
