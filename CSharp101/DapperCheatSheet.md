@@ -2,6 +2,18 @@
 
 Dapper is a lightweight ORM for .NET that maps SQL query results directly to C# objects.
 
+## High Level Overview
+
+1. Open a connection
+
+2. Write your SQL as a string
+
+3. Pass it to Dapper methods like .Query<T>() for SELECT or .Execute() for INSERT, UPDATE, DELETE
+
+4. Optionally parameterize your queries safely
+
+5. Get your results back mapped into C# classes or primitives
+
 ---
 
 ## Setup
