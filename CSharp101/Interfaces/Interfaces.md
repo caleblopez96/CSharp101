@@ -220,3 +220,70 @@ public class SlackSender : IMessageSender
   }
 }
 ```
+
+#### Food For Thought
+
+---
+
+**Question:**  
+So I literally use an interface when I want to enforce that a certain class contains a certain method?
+
+**Answer:**  
+At its core — **yes**.  
+It's basically a contract saying:  
+_"Any class that implements me must have these methods (or properties, or events)."_
+
+---
+
+**Question:**
+So basically, when creating a class thats going to inherit from an interface, the class is FORCED to implement whatever methods, properties, or events are declared in the interface?
+
+**Answer:**
+
+Yes. In the following example, every class using the IMessageSender interface MUST have a SendMessage method:
+
+```csharp
+public interface IMessageSender
+{
+    void SendMessage (string message);
+}
+```
+
+```csharp
+// The SendMessage() method MUST be implemented inside of this class
+
+public class EmailSender : IMessageSender
+{
+  void SendMessage(string message)
+  {
+      Console.WriteLine($"Sending Email Message: {message}");
+  }
+}
+```
+
+---
+
+**Question:**  
+When I'm creating a class that implements an interface, is there a way to quickly see what methods I have to implement?
+
+**Answer:**  
+Yes! In Visual Studio, you can **right-click on the interface name** and select **"Go To Definition"**.
+
+This will show you the list of methods, properties, or events that your class is required to implement. It’s a quick way to check the "contract" you need to follow.
+
+---
+
+**Question:**  
+Can a class implement more than one interface?
+
+**Answer:**  
+Yes. In C#, a class can implement multiple interfaces like this:
+
+```csharp
+public class MyClass : IInterface1, IInterface2
+{
+    // implement methods from both interfaces here
+}
+```
+
+---
