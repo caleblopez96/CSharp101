@@ -13,6 +13,16 @@ It’s like saying:
 It doesn't matter **how** you deliver it: bike, car, skateboard, teleport…  
 It just matters that you have a `DeliverPizza()` method.
 
+```csharp
+public interface IInterfaceName
+{
+    void MethodName (type param);
+}
+
+// Start interface variable names with "I" -> IMessageSender
+
+```
+
 ---
 
 ## Why Would You Use It?
@@ -132,10 +142,77 @@ Both Domino’s and Papa John’s promised to have a `DeliverPizza()` method.
 
 ---
 
-## MISC...
+## Scenario:
 
-**Database service**, **API service**, **file service** — all different places to get data, but your main program just asks:
+You’re building a program that can send messages to different places.
+Right now, you want to be able to send a message to:
 
-> “Do you have a `GetProducts()` method? Cool — I’ll call it.”
+- Email
 
-Doesn’t matter if it’s coming from a database, file, or external API.
+- Text message
+
+But later, you might add:
+
+- Slack
+
+- Discord
+
+### Solution:
+
+```csharp
+public interface IMessageSender
+{
+    void SendMessage (string message);
+}
+```
+
+### Usage
+
+```csharp
+// Email Sender
+
+public class EmailSender : IMessageSender
+{
+    public void SendMessage(string message)
+    {
+        Console.WriteLine($"Sending Email: {message}");
+    }
+}
+```
+
+```csharp
+// Text Sender
+
+public class TextSender : IMessageSender
+{
+    public void SendMessage(string message)
+    {
+        Console.WriteLine($"Sending Text Message: {message}");
+    }
+}
+
+```
+
+```csharp
+// Facebook Sender
+
+public class FacebookSender : IMessageSender
+{
+  public void SendMessage(string message)
+  {
+    Console.WriteLine($"Sending Facebook Message: {message}");
+  }
+}
+```
+
+```csharp
+// Slack Sender
+
+public class SlackSender : IMessageSender
+{
+  public void SendMessage(string message)
+  {
+    Console.WriteLine($"Sending Slack Message: {message}");
+  }
+}
+```
