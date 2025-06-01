@@ -159,6 +159,8 @@ But later, you might add:
 
 ### Solution:
 
+#### Create The Interface
+
 ```csharp
 public interface IMessageSender
 {
@@ -166,7 +168,9 @@ public interface IMessageSender
 }
 ```
 
-### Usage
+#### Use the Interface
+
+- Create your class and have it implement the interface
 
 ```csharp
 // Email Sender
