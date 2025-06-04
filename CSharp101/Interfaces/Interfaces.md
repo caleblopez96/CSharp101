@@ -13,21 +13,22 @@ It’s like saying:
 It doesn't matter **how** you deliver it: bike, car, skateboard, teleport…  
 It just matters that you have a `DeliverPizza()` method.
 
+## SYNTAX:
+
 ```csharp
+// Start interface variable names with "I"
+
 public interface IInterfaceName
 {
     void MethodName (type param);
 }
-
-// Start interface variable names with "I" -> IMessageSender
-
 ```
 
 ---
 
 ## Why Would You Use It?
 
-So later, if I switch from **Domino’s** to **Papa John’s**, I don’t have to rewrite my entire program.
+So later, if I switch from Domino’s to Papa John’s, I don’t have to rewrite my entire program.
 
 As long as both follow the rule (both have a `DeliverPizza()` method), the code still works.
 
