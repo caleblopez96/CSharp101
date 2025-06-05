@@ -7,6 +7,21 @@ namespace HttpClientExample
     {
         readonly HttpClient client = new();
 
+        class Todo
+        {
+            [JsonPropertyName("userId")]
+            public int UserId { get; set; }
+
+            [JsonPropertyName("id")]
+            public int Id { get; set; }
+
+            [JsonPropertyName("title")]
+            public string? Title { get; set; }
+
+            [JsonPropertyName("completed")]
+            public bool Completed { get; set; }
+        }
+
         static async Task Main()
         {
             Program program = new();
@@ -35,21 +50,6 @@ namespace HttpClientExample
             {
                 Console.WriteLine("Failed to deserialize the response.");
             }
-        }
-
-        class Todo
-        {
-            [JsonPropertyName("userId")]
-            public int UserId { get; set; }
-
-            [JsonPropertyName("id")]
-            public int Id { get; set; }
-
-            [JsonPropertyName("title")]
-            public string? Title { get; set; }
-
-            [JsonPropertyName("completed")]
-            public bool Completed { get; set; }
         }
     }
 }
