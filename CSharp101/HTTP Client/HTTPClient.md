@@ -12,9 +12,9 @@ namespace HttpClientExample
 {
   public class HttpClientProgram
   {
-    private readonly HttpClient client = new();
+      private readonly HttpClient client = new();
 
-    public async Task GetTodoItems()
+      public async Task GetTodoItems()
     {
       HttpResponseMessage response = await client.GetAsync("https://jsonplaceholder.typicode.com/todos");
       string content = await response.Content.ReadAsStringAsync();
