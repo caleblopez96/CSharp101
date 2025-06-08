@@ -23,10 +23,10 @@ This defines what properties you want from the JSON.
 public class User
 {
     [JsonPropertyName("id")]
-    public int Id { get; set; }
+    public required int Id { get; set; }
 
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 }
 ```
 
@@ -81,30 +81,6 @@ Console.WriteLine(user.Name);  // Output: Caleb
 
 Because it matches by **key name**, not order.
 
-## Without a Model (Dynamic Deserialization)
-
-```csharp
-dynamic user = JsonSerializer.Deserialize<dynamic>(jsonString);
-
-Console.WriteLine(user.GetProperty("id"));   // 12
-Console.WriteLine(user.GetProperty("name")); // Caleb
-```
-
-**Why avoid this?**
-
-- No type safety.
-- No intellisense.
-- Risky at runtime.
-
-## Final Recap:
-
-| With Model                        | Without Model (Dynamic)               |
-| :-------------------------------- | :------------------------------------ |
-| Strong typing                     | Weak typing                           |
-| Compile-time errors if wrong type | Runtime errors if something's missing |
-| Intellisense support              | No Intellisense                       |
-| Cleaner, maintainable code        | Messier, more error-prone             |
-
 ## Working Example:
 
 ```csharp
@@ -125,38 +101,42 @@ namespace HttpClientExample
 
         private async Task GetTodoItems()
         {
-            string response = await client.GetStringAsync("https://jsonplaceholder.typicode.com/todos");
+          try
+          {
+              string response = await client.GetStringAsync("https://jsonplaceholder.typicode.com/todos");
+              List<Todo>? todos = JsonSerializer.Deserialize<List<Todo>>(response);
 
-            // Console.WriteLine(response);
-
-            List<Todo>? todos = JsonSerializer.Deserialize<List<Todo>>(response);
-
-            if (todos != null)
-            {
-                foreach (var todo in todos)
-                {
-                    Console.WriteLine($"Todo: {todo.Title}: Completed: {todo.Completed}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Failed to deserialize the response.");
-            }
+              if (todos != null)
+              {
+                  foreach (var todo in todos)
+                  {
+                      Console.WriteLine($"Todo: {todo.Title}: Completed: {todo.Completed}");
+                  }
+              }
+          }
+          catch (HttpRequestException ex)
+          {
+              Console.WriteLine($"API call failed: {ex.Message}");
+          }
+          catch (JsonException ex)
+          {
+              Console.WriteLine($"JSON parsing failed: {ex.Message}");
+          }
         }
 
         class Todo
         {
             [JsonPropertyName("userId")]
-            public int UserId { get; set; }
+            public required int UserId { get; set; }
 
             [JsonPropertyName("id")]
-            public int Id { get; set; }
+            public required int Id { get; set; }
 
             [JsonPropertyName("title")]
-            public string? Title { get; set; }
+            public required string? Title { get; set; }
 
             [JsonPropertyName("completed")]
-            public bool Completed { get; set; }
+            public required bool Completed { get; set; }
         }
     }
 }
