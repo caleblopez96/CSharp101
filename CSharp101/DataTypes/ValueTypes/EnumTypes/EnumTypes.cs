@@ -15,7 +15,10 @@
 // USES:
 // representing fixed sets of constants, improving code readability, type safety
 
-namespace CSharpNotes.DataTypes.ValueTypes.EnumTypes
+// NOTE:
+// enum values are stored as int's by default
+
+namespace CSharp101.DataTypes.ValueTypes.EnumTypes
 {
   // Basic enum declaration
   public enum DaysOfWeek
@@ -43,29 +46,27 @@ namespace CSharpNotes.DataTypes.ValueTypes.EnumTypes
     public static HttpStatusCode status = HttpStatusCode.OK;
     public static void Run()
     {
-      Console.WriteLine($"This is the enum data type example: ");
       Console.WriteLine("DaysOfWeek today = DaysOfWeek.Friday;");
       Console.WriteLine("HttpStatusCode status = HttpStatusCode.OK;");
-      Console.WriteLine("Priority taskPriority = Priority.High;");
       Console.WriteLine($"The variable today is type {today.GetType()} and has a value of {today}");
       Console.WriteLine($"The variable status is type {status.GetType()} and has a value of {status}");
       Console.WriteLine();
 
-      // Demonstrating enum values and casting
+      // enum values and casting
       Console.WriteLine("Enum Values and Casting:");
       Console.WriteLine($"today as integer: {(int)today}");
       Console.WriteLine($"status as integer: {(int)status}");
       Console.WriteLine();
 
-      // Demonstrating enum methods
+      // enum methods
       Console.WriteLine("Enum Methods:");
       Console.WriteLine($"Enum.GetName(typeof(DaysOfWeek), 3): {Enum.GetName(typeof(DaysOfWeek), 3)}");
       Console.WriteLine($"Enum.GetNames(typeof(Priority)):");
 
-      // Demonstrating enum parsing
+      // enum parsing
       Console.WriteLine("Enum Parsing:");
       string dayString = "Monday";
-      if (Enum.TryParse<DaysOfWeek>(dayString, out DaysOfWeek parsedDay))
+      if (Enum.TryParse(dayString, out DaysOfWeek parsedDay))
       {
         Console.WriteLine($"Successfully parsed '{dayString}' to {parsedDay}");
       }
