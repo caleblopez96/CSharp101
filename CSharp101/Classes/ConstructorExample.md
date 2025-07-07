@@ -10,7 +10,23 @@ public class Dealership
     public string Location { get; set; }
     public List<Car> Inventory { get; set; }
 
-    // Constructor
+    // Constructor Example 1: No params
+    public Dealership()
+    {
+        Name = "Unknown";
+        Location = "Unknown";
+        Inventory = new List<Car>();
+    }
+
+    // Constructor Example 2: 2 params
+    public Dealership(string name, string location) 
+    {
+        Name = name;
+        Location = location;
+        Inventory = new List<Car>();
+    }
+
+    // Constructor Example 3: 3 params
     public Dealership(string name, string location, List<Car> inventory)
     {
         Name = name;
@@ -97,7 +113,7 @@ public class Car
     public string? Make { get; set; }
 }
 
-Car car = new Car();
+Car car = new Car() { Make = "Honda" };
 car.Make = "Honda"; 
 
 ```
