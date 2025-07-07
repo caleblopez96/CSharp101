@@ -33,7 +33,33 @@ public class Dealership
         Location = location;
         Inventory = inventory;
     }
+
+    public void Describe() => Console.WriteLine($"Name: {Name}, Location: {Location}, Inventory: {Inventory}");
 }
+```
+USAGE:
+```csharp
+Dealership dealership1 = new();
+dealership1.Describe(); // Name: Unknown, Location: Unknown, Inventory: No cars in inventory.
+
+Dealership dealership2 = new("Honda Chandler", "Chandler, AZ
+dealership2.Describe(); // Name: Honda Chandler, Location: Chandler, Inventory: - No cars in inventory.
+
+List<Car> inventory = new()
+{
+    new Car("Toyota", "Camry", 2020),
+    new Car("Toyota", "Corolla", 2019
+    new Car("Toyota", "RAV4", 2021)
+};
+Dealership dealership3 = new("Toyota Chandler", "Chandler, AZ", inventory);
+dealership3.Describe();
+/*
+    Name: Toyota Chandler, Location: Chandler, AZ
+    Inventory:
+    -2020 Toyota Camry
+    -2019 Toyota Corolla
+    -2021 Toyota RAV4
+*/
 ```
 
 **Notes:**
@@ -48,19 +74,32 @@ public class Dealership
 ## With Primary Constructor (C# 12+)
 
 ```csharp
-public class Dealership(string name, string location, List<Car> inventory)
+public class Dealership(string name = "Unknown", string location = "Unknown", List<Car>? inventory = null)
 {
-    // Properties assigned directly from constructor parameters
+
     public string Name { get; set; } = name;
     public string Location { get; set; } = location;
-    public List<Car> Inventory { get; set; } = inventory;
+    public List<Car> Inventory { get; set; } = inventory ?? new List<Car>();
+
+    public void Describe()
+    {
+        Console.WriteLine($"Name: {Name}, Location: {Location}");
+
+        if (Inventory.Count == 0)
+        {
+            Console.WriteLine("Inventory: No cars in inventory.");
+        }
+        else
+        {
+            Console.WriteLine("Inventory:");
+            foreach (var car in Inventory)
+            {
+                Console.WriteLine($"- {car}");
+            }
+        }
+    }
 }
 
-// create inventory list to pass as argument to inventory param
-var inventory = new List<Car>();
-
-// instantiate the object
-Dealership dealership1 = new("Name", "Location", inventory);
 ```
 
 **Notes:**
@@ -72,59 +111,3 @@ Dealership dealership1 = new("Name", "Location", inventory);
 - Cleaner syntax when constructor parameters match properties directly.
 
 ---
-
-## Pros & Cons Table
-
-| Classic Constructor               | Primary Constructor             |
-|:----------------------------------|:--------------------------------|
-| Familiar, works in older C# versions | New in C# 12+                  |
-| Supports multiple/overloaded constructors | No constructor overloading  |
-| Slightly more verbose             | Cleaner, less boilerplate       |
-| Parameters only accessible inside constructor | Parameters accessible throughout class body |
-
----
-
-## Required vs Optional Properties  
-```csharp
-public class Car 
-{
-    public required string Make { get; set; }
-}
-
-// Option 1: Object initializer syntax (works with the class as is)
-Car car1 = new Car { Make = "Honda" };
-
-// Option 2: Constructor with parameter (requires adding constructor or primary constructor)
-public Car(string make)
-{
-    Make = make;
-}
-Car car2 = new Car("Honda");
-```
-
----
-
-### Optional (Non-Required) Properties  
-If it’s not marked as `required`, you can assign it anytime after construction.
-
-```csharp
-public class Car 
-{
-    public string? Make { get; set; }
-}
-
-Car car = new Car() { Make = "Honda" };
-car.Make = "Honda"; 
-
-```
-
----
-
-## When Should You Use a Constructor vs Object Initializers?
-
-| Scenario                        | Use Constructor             | Use Object Initializer       |
-|:--------------------------------|:----------------------------|:-----------------------------|
-| You want to enforce required values for a valid object | ✅ Yes                     | ❌ Not enforced               |
-| You need to validate or transform values at construction | ✅ Yes                     | ❌ Not possible directly       |
-| You prefer flexibility and setting properties later | ❌ Optional                 | ✅ Ideal                     |
-| You want to support multiple ways to create an object | ✅ Use overloaded constructors | ❌ No overloading in object initializers |
