@@ -10,7 +10,7 @@
 
 // USES: When you need a flexible, type-safe, resizable collection
 
-namespace CSharpNotes.DataTypes.ReferenceTypes.ListTypes
+namespace CSharp101.DataTypes.ReferenceTypes.Collections.List
 {
     public class ListExample
     {

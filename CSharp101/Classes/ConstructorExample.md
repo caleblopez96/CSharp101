@@ -76,30 +76,36 @@ dealership3.Describe();
 ```csharp
 public class Dealership(string name = "Unknown", string location = "Unknown", List<Car>? inventory = null)
 {
-
+    // Properties
     public string Name { get; set; } = name;
     public string Location { get; set; } = location;
     public List<Car> Inventory { get; set; } = inventory ?? new List<Car>();
 
-    public void Describe()
-    {
-        Console.WriteLine($"Name: {Name}, Location: {Location}");
-
-        if (Inventory.Count == 0)
-        {
-            Console.WriteLine("Inventory: No cars in inventory.");
-        }
-        else
-        {
-            Console.WriteLine("Inventory:");
-            foreach (var car in Inventory)
-            {
-                Console.WriteLine($"- {car}");
-            }
-        }
-    }
+    public void Describe() => Console.WriteLine($"Name: {Name}, Location: {Location}, Inventory: {Inventory}");
 }
 
+// Usage examples:
+Dealership dealership1 = new();
+dealership1.Describe(); // Name: Unknown, Location: Unknown, Inventory: No cars in inventory.
+
+Dealership dealership2 = new("Honda Chandler", "Chandler, AZ");
+dealership2.Describe(); // Name: Honda Chandler, Location: Chandler, AZ, Inventory: - No cars in inventory.
+
+List<Car> inventory = new()
+{
+    new Car("Toyota", "Camry", 2020),
+    new Car("Toyota", "Corolla", 2019),
+    new Car("Toyota", "RAV4", 2021)
+};
+Dealership dealership3 = new("Toyota Chandler", "Chandler, AZ", inventory);
+dealership3.Describe();
+/*
+    Name: Toyota Chandler, Location: Chandler, AZ
+    Inventory:
+    -2020 Toyota Camry
+    -2019 Toyota Corolla
+    -2021 Toyota RAV4
+*/
 ```
 
 **Notes:**
